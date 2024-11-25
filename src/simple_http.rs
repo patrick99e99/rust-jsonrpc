@@ -94,7 +94,7 @@ impl Default for SimpleHttpTransport {
             #[cfg(fuzzing)]
             timeout: Duration::from_millis(1),
             #[cfg(not(fuzzing))]
-            timeout: Duration::from_secs(15),
+            timeout: Duration::from_secs(60 * 5),
             basic_auth: None,
             #[cfg(feature = "proxy")]
             proxy_addr: net::SocketAddr::new(
